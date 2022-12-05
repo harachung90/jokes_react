@@ -1,10 +1,20 @@
 import './App.css';
 import Jokes from "./Jokes";
+import JokesData from "./JokesData";
+import jokesData from "./JokesData";
 
 function App() {
+    const jokeElement = jokesData.map(joke => {
+        return <Jokes
+            setup={joke.setup}
+            punchline={joke.punchline}
+        />
+    })
+
   return (
     <div className="App">
-        <Jokes
+        {jokeElement}
+{/*        <Jokes
             punchline="It's hard to explain puns to kleptomaniacs because they always take things literally."
             isPun={true}
             upvotes={10}
@@ -25,7 +35,7 @@ function App() {
             setup="Why don't pirates travel on mountain roads?"
             punchline="Scurvy."
             isPun={true}
-        />
+        />*/}
     </div>
   );
 }
