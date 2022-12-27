@@ -1,13 +1,15 @@
 import './App.css';
+import React from 'react';
 import Jokes from "./Jokes";
-import JokesData from "./JokesData";
 import jokesData from "./JokesData";
 
 function App() {
+
     const jokeElement = jokesData.map(joke => {
         return <Jokes
             setup={joke.setup}
             punchline={joke.punchline}
+            isShown={joke.isShown}
         />
     })
 
